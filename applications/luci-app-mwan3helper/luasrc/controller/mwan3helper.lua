@@ -9,14 +9,14 @@ function index()
 	end
 
 
-  local page = entry({"admin", "services", "mwan3helper"},alias("admin", "services", "mwan3helper", "client"),_("MWAN3 Helper"), 300)
+  local page = entry({"admin", "system", "mwan3helper"},alias("admin", "system", "mwan3helper", "client"),_("MWAN3 Helper"), 300)
 	page.dependent = true
 	page.acl_depends = { "luci-app-mwan3helper" }
-  entry({"admin", "services", "mwan3helper", "client"},cbi("mwan3helper/client"),_("Settings"), 10).leaf = true
+  entry({"admin", "system", "mwan3helper", "client"},cbi("mwan3helper/client"),_("Settings"), 10).leaf = true
  	
-	entry({"admin", "services", "mwan3helper", "lists"},cbi("mwan3helper/list"),_("IPSet Lists"), 20).leaf = true
+	entry({"admin", "system", "mwan3helper", "lists"},cbi("mwan3helper/list"),_("IPSet Lists"), 20).leaf = true
 	
-	entry({"admin","services","mwan3helper","status"},call("act_status")).leaf=true
+	entry({"admin","system","mwan3helper","status"},call("act_status")).leaf=true
 	
 end
 
